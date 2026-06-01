@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bm5lruireh7ri"]
 
-[ext_resource type="PackedScene" uid="uid://dyeqwbonbhjbo" path="res://scenes/2d_player.tscn" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://dyeqwbonbhjbo" path="res://scenes/3d_player.tscn" id="1_nnsk1"]
+[ext_resource type="Script" uid="uid://ct32poiqavai1" path="res://scenes/area_3d.gd" id="2_rwgxs"]
 
 [sub_resource type="Environment" id="Environment_e5uuo"]
 
@@ -12,6 +13,10 @@ size = Vector3(12.294767, 0.4769287, 12.0499115)
 [sub_resource type="PlaneMesh" id="PlaneMesh_rwgxs"]
 size = Vector2(10, 10)
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_4wyf3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k0juu"]
+
 [node name="World" type="Node3D" unique_id=905424781]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2011863406]
@@ -22,15 +27,28 @@ transform = Transform3D(1, 0, 0, 0, 0.9329473, 0.3600131, 0, -0.3600131, 0.93294
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1405176419]
 environment = SubResource("Environment_e5uuo")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=2125453357]
+[node name="Piso" type="StaticBody3D" parent="." unique_id=2125453357]
 physics_material_override = SubResource("PhysicsMaterial_nnsk1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=700194938]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Piso" unique_id=700194938]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014378548, -0.26153564, 0.0062026978)
 shape = SubResource("BoxShape3D_rwgxs")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1963382310]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Piso" unique_id=1963382310]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0055954456, 0, 0)
 mesh = SubResource("PlaneMesh_rwgxs")
 
-[node name="2dPlayer" parent="." unique_id=1677572419 instance=ExtResource("1_nnsk1")]
+[node name="Area3D" type="Area3D" parent="." unique_id=851608784]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9850895, 0.27114415, 0)
+script = ExtResource("2_rwgxs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=623626735]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75028586, 0)
+mesh = SubResource("CylinderMesh_4wyf3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=974283244]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27010274, 0)
+shape = SubResource("BoxShape3D_k0juu")
+
+[node name="3dPlayer" parent="." unique_id=1677572419 groups=["player"] instance=ExtResource("1_nnsk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5166725, -0.02307117, -0.24399209)
