@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bm5lruireh7ri"]
+
+[ext_resource type="PackedScene" uid="uid://dyeqwbonbhjbo" path="res://scenes/2d_player.tscn" id="1_nnsk1"]
+
+[sub_resource type="Environment" id="Environment_e5uuo"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nnsk1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rwgxs"]
+size = Vector3(12.294767, 0.4769287, 12.0499115)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rwgxs"]
+size = Vector2(10, 10)
+
+[node name="World" type="Node3D" unique_id=905424781]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2011863406]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=506326076]
+transform = Transform3D(1, 0, 0, 0, 0.9329473, 0.3600131, 0, -0.3600131, 0.9329473, 0, 1.0646665, 1.5987034)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1405176419]
+environment = SubResource("Environment_e5uuo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=2125453357]
+physics_material_override = SubResource("PhysicsMaterial_nnsk1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=700194938]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014378548, -0.26153564, 0.0062026978)
+shape = SubResource("BoxShape3D_rwgxs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1963382310]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0055954456, 0, 0)
+mesh = SubResource("PlaneMesh_rwgxs")
+
+[node name="2dPlayer" parent="." unique_id=1677572419 instance=ExtResource("1_nnsk1")]

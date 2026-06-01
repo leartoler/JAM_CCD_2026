@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dyeqwbonbhjbo"]
+
+[ext_resource type="Script" uid="uid://c24gtg8fglnsp" path="res://2d_player.gd" id="1_w2adf"]
+[ext_resource type="Texture2D" uid="uid://lpdi1rvuppvr" path="res://assets/zorro.png" id="2_u5lef"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dr8kl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_u5lef")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p641g"]
+size = Vector3(0.44070435, 0.26171875, 1)
+
+[node name="2dPlayer" type="CharacterBody3D" unique_id=1677572419]
+script = ExtResource("1_w2adf")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=335210919]
+transform = Transform3D(0.045, 0, 0, 0, 0.045, 0, 0, 0, 0.045, 0.033201337, 0.13201866, 0.042468786)
+flip_h = true
+sprite_frames = SubResource("SpriteFrames_dr8kl")
+animation = &"idle"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1790242110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.027471542, 0.13318151, -0.0025936365)
+shape = SubResource("BoxShape3D_p641g")
