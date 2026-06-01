@@ -1,7 +1,7 @@
 extends Area3D
 
 # Ruta de la escena 2D
-@export var escena_2d: String = "res://scenes/2d_player.tscn"
+@export var escena_2d: String = "res://scenes/endless_scene_1.tscn"
 
 func _ready():
 	body_entered.connect(_on_body_entered)

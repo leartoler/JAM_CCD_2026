@@ -1,13 +1,13 @@
-[gd_scene format=3 uid="uid://duoa5m10nnggo"]
+[gd_scene format=3 uid="uid://bqii7qqop6reu"]
 
-[ext_resource type="Script" uid="uid://djff8062ko8om" path="res://code/2d_player.gd" id="1_w2adf"]
-[ext_resource type="Texture2D" uid="uid://lpdi1rvuppvr" path="res://assets/zorro.png" id="2_u5lef"]
+[ext_resource type="Script" uid="uid://djff8062ko8om" path="res://code/2d_player.gd" id="1_23ceg"]
+[ext_resource type="Texture2D" uid="uid://lpdi1rvuppvr" path="res://assets/zorro.png" id="2_j8qel"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u5lef"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_u5lef")
+"texture": ExtResource("2_j8qel")
 }],
 "loop": true,
 "name": &"hurt",
@@ -15,7 +15,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_u5lef")
+"texture": ExtResource("2_j8qel")
 }],
 "loop": true,
 "name": &"idle",
@@ -23,7 +23,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_u5lef")
+"texture": ExtResource("2_j8qel")
 }],
 "loop": true,
 "name": &"run",
@@ -33,9 +33,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dr8kl"]
 size = Vector2(46, 26)
 
-[node name="Player" type="Area2D" unique_id=141034166]
-script = ExtResource("1_w2adf")
-speed = 116
+[node name="Player" type="CharacterBody2D" unique_id=1433468245]
+script = ExtResource("1_23ceg")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=860107484]

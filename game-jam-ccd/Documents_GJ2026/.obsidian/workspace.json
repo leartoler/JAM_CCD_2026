@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "GDD.md",
-                "mode": "source",
+                "file": "Codes/Movimiento 2d xy.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "GDD"
+              "title": "Movimiento 2d xy"
             }
           }
         ]
@@ -185,8 +185,10 @@
   },
   "active": "3f1d4b6502df1a41",
   "lastOpenFiles": [
-    "Welcome.md",
     "GDD.md",
+    "Codes/Movimiento 2d xy.md",
+    "Codes",
+    "Welcome.md",
     "Documentos/Game Work Jam GDD.pdf",
     "Documentos"
   ]

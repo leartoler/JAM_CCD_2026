@@ -1,3 +1,4 @@
+```
 extends Area2D
 #señales que se emiten
 signal pickup
@@ -50,3 +51,11 @@ func _on_area_entered(area: Area2D) -> void:
 		emit_signal("hurt")
 		die()
 		
+```
+
+
+
+
+
+
+

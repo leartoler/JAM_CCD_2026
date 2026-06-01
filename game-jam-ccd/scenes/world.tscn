@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bm5lruireh7ri"]
 
 [ext_resource type="PackedScene" uid="uid://dyeqwbonbhjbo" path="res://scenes/3d_player.tscn" id="1_nnsk1"]
-[ext_resource type="Script" uid="uid://ct32poiqavai1" path="res://scenes/area_3d.gd" id="2_rwgxs"]
+[ext_resource type="Script" uid="uid://ct32poiqavai1" path="res://code/area_3d.gd" id="2_rwgxs"]
 
 [sub_resource type="Environment" id="Environment_e5uuo"]
 
